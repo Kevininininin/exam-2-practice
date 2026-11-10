@@ -25,6 +25,7 @@
 .gallery img {
     width: 100%;
     border: 5px dashed orange;
+    box-sizing: border-box;
 }
 
 @media (min-width: 550px) {
@@ -39,6 +40,7 @@
         grid-column: 1 / -1;
     }
 
+    /* or 2n works too */
     .gallery img:nth-child(even) {
         border: 5px dashed black;
     }
@@ -46,7 +48,32 @@
 
 @media (min-width: 800px) {
     .gallery {
+        grid-template-columns: 18% 18% 18% 18%;
         background-color: orange;
+        align-items: center;
 
+        /* padding: 0px 5% 0px 5%; */
+        padding: 5%;
+    }
+
+    .gallery img {
+        width: 100%;
+        border: 5px solid white;
+    }
+}
+
+@media (min-width: 900px) {
+    .gallery {
+        background-color: purple;
+        gap: 3%;
+        align-items: stretch;
+    }
+
+    .gallery img {
+        grid-column: span 2;
+    }
+
+    .gallery img:nth-child(3n) {
+        grid-column: 2 / span 2;
     }
 }
