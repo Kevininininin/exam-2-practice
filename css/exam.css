@@ -1,2 +1,52 @@
 /* The first line of your stylesheet **must** be your first name and your GSI. Add your name and GSI's name as a comment! */
 
+.skip {
+    position: absolute;
+    top: -9999px;
+    left: auto;
+}
+
+.skip:focus {
+    left: 20px;
+    top: 20px;
+}
+
+.gallery {
+    display: grid;
+    margin: 0px auto 0px auto;
+    width: 85%;
+
+    background-color: black;
+    grid-template-columns: 24% 24% 24%;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+.gallery img {
+    width: 100%;
+    border: 5px dashed orange;
+}
+
+@media (min-width: 550px) {
+    .gallery {
+        background-color: white;
+        gap: 5px;
+        /* justify-content: ; */
+        align-items: start;
+    }
+
+    .gallery img:nth-child(4n) {
+        grid-column: 1 / -1;
+    }
+
+    .gallery img:nth-child(even) {
+        border: 5px dashed black;
+    }
+}
+
+@media (min-width: 800px) {
+    .gallery {
+        background-color: orange;
+
+    }
+}
